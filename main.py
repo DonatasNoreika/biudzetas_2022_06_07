@@ -22,7 +22,7 @@ def irasyti_zurnala(zurnalas):
 
 while True:
     zurnalas = gauti_zurnala()
-    pasirinkimas = int(input("Pasirinkite:\n1 - įvesti pajamas\n2 - įvesti išlaidas\n3 - peržiūrėti visus įrašus\n4 - parodyti balansą\n5 - išeiti iš programos\n"))
+    pasirinkimas = int(input("Pasirinkite:\n1 - įvesti pajamas\n2 - įvesti išlaidas\n3 - peržiūrėti visus įrašus\n4 - parodyti balansą\n5 - ištrinti įrašą\n0 - išeiti iš programos\n"))
     if pasirinkimas == 1:
         suma = float(input("Įveskite pajamų sumą"))
         info = input("Įveskite informaciją")
@@ -51,5 +51,11 @@ while True:
                 suma -= irasas.suma
         print("Balansas:", suma)
     if pasirinkimas == 5:
+        for nr, irasas in enumerate(zurnalas):
+            print(nr, irasas)
+        trinamas = int(input("Pasirinkite trinamo įrašo skaičių"))
+        zurnalas.pop(trinamas)
+        irasyti_zurnala(zurnalas)
+    if pasirinkimas == 0:
         print("Viso gero")
         break
