@@ -9,11 +9,17 @@ while True:
     pasirinkimas = int(input("Pasirinkite:\n1 - įvesti pajamas\n2 - įvesti išlaidas\n3 - peržiūrėti visus įrašus\n4 - parodyti balansą\n5 - išeiti iš programos\n"))
     if pasirinkimas == 1:
         suma = float(input("Įveskite pajamų sumą"))
-        irasas = PajamuIrasas(suma)
+        info = input("Įveskite informaciją")
+        moketojas = input("Įveskite moketoją")
+        tipas = input("Įveskite tipą")
+        irasas = PajamuIrasas(suma, info, moketojas, tipas)
         zurnalas.append(irasas)
     if pasirinkimas == 2:
         suma = float(input("Įveskite išlaidų sumą"))
-        irasas = IslaiduIrasas(suma)
+        info = input("Įveskite informaciją")
+        paskirtis = input("Įveskite paskirtį")
+        pinigai = input("Įveskite pinigų tipą")
+        irasas = IslaiduIrasas(suma, info, paskirtis, pinigai)
         zurnalas.append(irasas)
     if pasirinkimas == 3:
         for irasas in zurnalas:
